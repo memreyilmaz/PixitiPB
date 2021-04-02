@@ -40,7 +40,7 @@ ext {
     junittest_version = '1.1.2'
     espresso_version = '3.3.0'
 
-    paging_version = '3.0.0-beta03'
+    paging_version = '3.0.0-alpha12'
     navigation_version = '2.3.2'
     retrofit_version = '2.9.0'
     coroutines_version = '1.4.2'

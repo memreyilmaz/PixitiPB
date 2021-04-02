@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/imageListFragment"
-        android:name="com.payback.pixiti.ui.ImageListFragment"
+        android:name="com.payback.pixiti.ui.list.ImageListFragment"
         android:label="fragment_image_list"
         tools:layout="@layout/fragment_image_list" >
         <action
@@ -18,5 +18,9 @@
         android:id="@+id/imageDetailFragment"
         android:name="com.payback.pixiti.ui.ImageDetailFragment"
         android:label="fragment_image_detail"
-        tools:layout="@layout/fragment_image_detail" />
+        tools:layout="@layout/fragment_image_detail" >
+        <argument
+            android:name="image"
+            app:argType="com.payback.pixiti.model.Image" />
+    </fragment>
 </navigation>

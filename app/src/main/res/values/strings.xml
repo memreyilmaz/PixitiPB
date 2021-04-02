@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Pixiti</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="label_list_retry">Retry</string>
+
+    <string name="desc_list_load_fail">Images couldn\'t load</string>
+    <string name="desc_search_no_images">No images found</string>
+
 </resources>
