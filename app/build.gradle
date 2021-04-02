@@ -75,10 +75,10 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
     //Hilt
-    implementation "com.google.dagger:hilt-android:$hiltAndroid_version"
-    kapt "com.google.dagger:hilt-compiler:$hiltAndroid_version"
-    testImplementation "com.google.dagger:hilt-android-testing:$hiltAndroid_version"
-    kaptTest "com.google.dagger:hilt-compiler:$hiltAndroid_version"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroidX_version"
+    kapt "androidx.hilt:hilt-compiler:$hiltAndroidX_version"
 
     //Android Lifecycle
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"

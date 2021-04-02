@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.payback.pixiti.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ImageListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
