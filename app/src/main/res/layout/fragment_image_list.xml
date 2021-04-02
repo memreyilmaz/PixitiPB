@@ -3,15 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="?android:attr/actionBarSize"
-    android:layout_marginBottom="@dimen/margin_size_12"
+    android:background="@color/black"
     tools:context=".ui.list.ImageListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/margin_xsmall" />
+        android:layout_marginTop="@dimen/margin_xsmall"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"

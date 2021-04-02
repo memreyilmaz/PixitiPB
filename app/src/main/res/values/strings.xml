@@ -3,7 +3,23 @@
 
     <string name="label_list_retry">Retry</string>
 
+    <string name="label_go_to_settings">Go To App Settings</string>
+    <string name="label_cancel">Cancel</string>
+
+    <string name="label_detail_info_downloads">Downloads</string>
+    <string name="label_detail_info_views">Views</string>
+    <string name="label_detail_info_resolution">Resolution</string>
+
     <string name="desc_list_load_fail">Images couldn\'t load</string>
+    <string name="desc_detail_info_resolution" translatable="false">%1$d x %2d</string>
     <string name="desc_search_no_images">No images found</string>
+    <string name="desc_share_with">Share With</string>
+    <string name="desc_share_image_message">Hello, I want to share this from Pixabay with you;</string>
+    <string name="desc_permission_denial_title">To save this photo, we need permission to access media on your device</string>
+    <string name="desc_permission_denial_detail">Storage permissions can be enabled under Settings > Apps > Pixiti > Permissions.</string>
+    <string name="desc_permission_error">An error occurred while getting permissions!</string>
+    <string name="desc_permission_missing_permission">All permissions are not granted!</string>
+    <string name="desc_image_download_error">An error occurred while saving image!</string>
+    <string name="desc_download_success">Image Saved</string>
 
 </resources>

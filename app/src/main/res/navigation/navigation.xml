@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/imageDetailFragment"
-        android:name="com.payback.pixiti.ui.ImageDetailFragment"
+        android:name="com.payback.pixiti.ui.detail.ImageDetailFragment"
         android:label="fragment_image_detail"
         tools:layout="@layout/fragment_image_detail" >
         <argument

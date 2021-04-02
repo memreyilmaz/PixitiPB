@@ -16,6 +16,17 @@
     <dimen name="margin_xlarge">40dp</dimen>
     <dimen name="margin_size_12">12dp</dimen>
 
+    <dimen name="image_owner_height">48dp</dimen>
+    <dimen name="image_owner_width">48dp</dimen>
+    <dimen name="image_owner_border">2dp</dimen>
+
+    <dimen name="detail_count_min_width">36dp</dimen>
+
+    <dimen name="default_seperator_height">0.1dp</dimen>
+
+    <dimen name="info_tag_corner_radius">24dp</dimen>
+
+    <dimen name="text_size_default">14sp</dimen>
     <dimen name="text_size_16">16sp</dimen>
     <dimen name="text_size_20">20sp</dimen>
 </resources>

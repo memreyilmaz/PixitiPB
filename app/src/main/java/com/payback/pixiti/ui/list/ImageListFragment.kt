@@ -42,11 +42,12 @@ class ImageListFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentImageListBinding.inflate(inflater, container, false)
-        return binding.root    }
+        return binding.root
+    }
 
 
     override fun onViewCreated(
@@ -98,7 +99,5 @@ class ImageListFragment : Fragment() {
 
     companion object {
         const val LIST_GRID_COUNT = 2
-
-        fun newInstance() = ImageListFragment()
     }
 }
