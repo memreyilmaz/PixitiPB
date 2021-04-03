@@ -10,8 +10,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.payback.pixiti.R
 import com.payback.pixiti.databinding.FragmentImageListBinding
+import com.payback.pixiti.model.Image
 import com.payback.pixiti.utils.DEFAULT_QUERY
+import com.payback.pixiti.utils.showAlertDialog
 import com.payback.pixiti.utils.showIf
 import com.payback.pixiti.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,8 +33,7 @@ class ImageListFragment : Fragment() {
         ImageListAdapter().apply {
             onItemClickListener = { image ->
                 image?.let {
-                    val action = ImageListFragmentDirections.actionImageListFragmentToImageDetailFragment(image)
-                    findNavController().navigate(action)
+                    showDetailNavigationDialog(image)
                 }
             }
         }
@@ -95,6 +97,18 @@ class ImageListFragment : Fragment() {
             }
         }
         binding.buttonListMainRetry.setOnClickListener { listAdapter.retry() }
+    }
+
+    private fun showDetailNavigationDialog(image: Image) {
+        context?.showAlertDialog(
+                message = getString(R.string.desc_detail_navigation_info),
+                negativeButtonText = getString(R.string.label_cancel),
+                positiveButtonText = getString(R.string.label_go_to_detail),
+                positiveButtonListener = {
+                    val action = ImageListFragmentDirections.actionImageListFragmentToImageDetailFragment(image)
+                    findNavController().navigate(action)
+                }
+        )
     }
 
     companion object {

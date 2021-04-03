@@ -29,7 +29,7 @@ fun Context.toastForDetail(
  * Create an alert dialog
  */
 fun Context.showAlertDialog(
-        title: String,
+        title: String? = null,
         message: String,
         isCancellable: Boolean = true,
         negativeButtonText: String,
@@ -40,7 +40,9 @@ fun Context.showAlertDialog(
         run {
             val builder = AlertDialog.Builder(this)
             builder.apply {
-                setTitle(title)
+                title?.let {
+                    setTitle(it)
+                }
                 setMessage(message)
             }
             builder.setNegativeButton(negativeButtonText) { dialog, _ ->
