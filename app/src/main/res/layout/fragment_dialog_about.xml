@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_default">
+
+    <TextView
+        android:id="@+id/text_view_app_title"
+        style="@style/DialogTextView"
+        android:layout_marginVertical="@dimen/margin_default"
+        android:text="@string/label_about_app_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view_pixabay_attribute_title"
+        style="@style/DialogTextView"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:text="@string/label_about_images_title"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/image_view_pixabay_logo"
+        android:layout_width="@dimen/about_pixabay_logo_width"
+        android:layout_height="@dimen/about_pixabay_logo_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:src="@drawable/pixabay_logo"
+        android:contentDescription="@string/desc_logo_pixabay" />
+
+    <TextView
+        android:id="@+id/text_view_pixabay_website"
+        style="@style/DialogTextView"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:autoLink="web"
+        android:text="@string/label_about_pixabay_url" />
+
+    <TextView
+        android:id="@+id/text_view_flaticon_attribute_title"
+        style="@style/DialogTextView"
+        android:layout_marginBottom="@dimen/margin_default"
+        android:text="@string/label_about_icons_title"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view_flaticon_attribute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:gravity="center_horizontal"
+        android:text="@string/label_about_attribution"
+        android:textColor="@color/black" />
+
+</LinearLayout>

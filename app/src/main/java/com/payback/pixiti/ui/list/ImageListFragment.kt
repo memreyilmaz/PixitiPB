@@ -1,13 +1,16 @@
 package com.payback.pixiti.ui.list
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
@@ -15,12 +18,13 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.payback.pixiti.R
 import com.payback.pixiti.databinding.FragmentImageListBinding
 import com.payback.pixiti.model.Image
+import com.payback.pixiti.ui.AboutFragment
+import com.payback.pixiti.ui.MainActivity
 import com.payback.pixiti.utils.hideKeyboard
 import com.payback.pixiti.utils.showAlertDialog
 import com.payback.pixiti.utils.showIf
 import com.payback.pixiti.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Job
 
 @AndroidEntryPoint
 class ImageListFragment : Fragment() {
@@ -53,7 +57,6 @@ class ImageListFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(
             view: View, savedInstanceState: Bundle?
     ) {
@@ -66,11 +69,18 @@ class ImageListFragment : Fragment() {
         setHasOptionsMenu(true)
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).supportActionBar?.show()
+    }
+
+    @SuppressLint("ResourceType")
     private fun initListAdapter() {
         binding.recyclerViewList.apply {
             setHasFixedSize(true)
+            val columns = resources.getInteger(R.integer.list_grid_count)
             layoutManager =
-                    StaggeredGridLayoutManager(LIST_GRID_COUNT, StaggeredGridLayoutManager.VERTICAL)
+                    StaggeredGridLayoutManager(columns, StaggeredGridLayoutManager.VERTICAL)
             adapter = listAdapter.withLoadStateHeaderAndFooter(
                     header = ImageListLoadStateAdapter().apply {
                         onRetryClickListener = { listAdapter.retry() }
@@ -113,10 +123,15 @@ class ImageListFragment : Fragment() {
         )
     }
 
+    private fun showAboutFragment(){
+        val aboutFragment: DialogFragment = AboutFragment.newInstance()
+        aboutFragment.show(childFragmentManager, AboutFragment.TAG)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_image_list, menu)
-        val searchItem = menu.findItem(R.id.menu_search)
+        val searchItem = menu.findItem(R.id.item_search)
         val searchView = searchItem.actionView as SearchView
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -140,6 +155,16 @@ class ImageListFragment : Fragment() {
             }
 
         })
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.item_info -> {
+                showAboutFragment()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {

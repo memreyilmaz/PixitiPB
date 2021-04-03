@@ -2,9 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_search"
+        android:id="@+id/item_search"
         android:icon="@drawable/ic_search"
         android:title="@string/desc_search_images"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView"/>
+
+    <item
+        android:id="@+id/item_info"
+        android:title="@string/label_about"
+        app:showAsAction="never" />
 </menu>

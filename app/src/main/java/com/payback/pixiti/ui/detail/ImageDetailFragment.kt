@@ -9,11 +9,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.Settings
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -27,6 +27,7 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.payback.pixiti.R
 import com.payback.pixiti.databinding.FragmentImageDetailBinding
 import com.payback.pixiti.model.Image
+import com.payback.pixiti.ui.MainActivity
 import com.payback.pixiti.utils.PermissionUtil
 import com.payback.pixiti.utils.loadImage
 import com.payback.pixiti.utils.showAlertDialog
@@ -47,6 +48,7 @@ class ImageDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (activity as MainActivity).supportActionBar?.hide()
     }
 
     override fun onCreateView(

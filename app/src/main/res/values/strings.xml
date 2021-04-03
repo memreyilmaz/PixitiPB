@@ -11,6 +11,20 @@
     <string name="label_detail_info_views">Views</string>
     <string name="label_detail_info_resolution">Resolution</string>
 
+    <string name="label_about_app_title">Pixiti 2021</string>
+    <string name="label_about_images_title">Images on this app from</string>
+    <string name="label_about_icons_title">Icons on this app from</string>
+    <string name="label_about_pixabay_url"><a href="https://www.pixabay.com/" title="Pixabay">www.pixabay.com</a></string>
+    <string name="label_about_attribution"><div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> \n<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></string>
+
+    <string name="label_about">About pixiti</string>
+
+    <string name="label_filter">Filter</string>
+    <string name="label_filter_type">Type</string>
+    <string name="label_filter_filter">Filter</string>
+    <string name="label_filter_orientation">Image Orientation</string>
+    <string name="label_filter_safe_Search">SafeSearch</string>
+
     <string name="desc_list_load_fail">Images couldn\'t load</string>
     <string name="desc_detail_info_resolution" translatable="false">%1$d x %2d</string>
     <string name="desc_search_no_images">No images found</string>
@@ -25,4 +39,15 @@
     <string name="desc_download_success">Image Saved</string>
     <string name="desc_search_images">Search Images</string>
 
+    <string name="desc_download_image">Save Image</string>
+    <string name="desc_info_image">Image Info</string>
+    <string name="desc_share_image">Share Image</string>
+    <string name="desc_close">Close</string>
+
+    <string name="desc_count_like_image">Like Count</string>
+    <string name="desc_count_fav_image">Favourite Count</string>
+    <string name="desc_count_comment_image">Comment Count</string>
+
+    <string name="desc_logo_pixabay">Pixabay Logo</string>
+    <string name="desc_image">Image</string>
 </resources>

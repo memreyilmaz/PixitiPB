@@ -30,7 +30,8 @@
             android:src="@drawable/ic_save"
             app:layout_constraintBottom_toBottomOf="@id/constraint_layout_detail_top"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/desc_download_image" />
 
         <ImageView
             android:id="@+id/image_view_share"
@@ -39,7 +40,8 @@
             android:layout_marginStart="@dimen/margin_default"
             android:src="@drawable/ic_share"
             app:layout_constraintStart_toEndOf="@id/image_view_save"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/desc_share_image" />
 
         <ImageView
             android:id="@+id/image_view_info"
@@ -48,7 +50,8 @@
             android:layout_marginStart="@dimen/margin_default"
             android:src="@drawable/ic_info"
             app:layout_constraintStart_toEndOf="@id/image_view_share"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/desc_info_image"/>
 
         <ImageView
             android:id="@+id/image_view_close"
@@ -56,7 +59,8 @@
             android:layout_height="24dp"
             android:src="@drawable/ic_close"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/desc_close"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -97,7 +101,8 @@
             android:src="@drawable/ic_thumb"
             app:layout_constraintEnd_toEndOf="@id/text_view_thumb_count"
             app:layout_constraintStart_toStartOf="@id/text_view_thumb_count"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/desc_count_like_image"/>
 
         <TextView
             android:id="@+id/text_view_thumb_count"
@@ -114,7 +119,8 @@
             android:src="@drawable/ic_favourite"
             app:layout_constraintEnd_toEndOf="@id/text_view_favourite_count"
             app:layout_constraintStart_toStartOf="@id/text_view_favourite_count"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/desc_count_fav_image"/>
 
         <TextView
             android:id="@+id/text_view_favourite_count"
@@ -131,7 +137,8 @@
             android:src="@drawable/ic_comment"
             app:layout_constraintEnd_toEndOf="@id/text_view_comment_count"
             app:layout_constraintStart_toStartOf="@id/text_view_comment_count"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/desc_count_comment_image" />
 
         <TextView
             android:id="@+id/text_view_comment_count"
