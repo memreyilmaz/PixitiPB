@@ -1,7 +1,10 @@
 package com.payback.pixiti.utils
 
+import android.app.Activity
 import android.content.Context
 import android.view.Gravity
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
@@ -58,3 +61,11 @@ fun Context.showAlertDialog(
             alertDialog.setCancelable(isCancellable)
             alertDialog.show()
         }
+
+/*
+ * Close the keyboard
+ */
+fun Context.hideKeyboard(view: View) {
+    val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+    inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+}

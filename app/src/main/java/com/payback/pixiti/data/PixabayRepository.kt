@@ -2,6 +2,7 @@ package com.payback.pixiti.data
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
+import androidx.paging.liveData
 import com.payback.pixiti.paging.ImagePagingSource
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -15,7 +16,7 @@ class PixabayRepository @Inject constructor(private val pixabayApi: PixabayApi) 
                     maxSize = IMAGE_MAX_SIZE,
                     enablePlaceholders = false
             ), pagingSourceFactory = { ImagePagingSource(pixabayApi, query) }
-    ).flow
+    ).liveData
 
     companion object {
         private const val IMAGE_PAGE_SIZE = 20

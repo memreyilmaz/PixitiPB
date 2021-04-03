@@ -3,23 +3,24 @@ package com.payback.pixiti.ui.list
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.payback.pixiti.R
 import com.payback.pixiti.databinding.FragmentImageListBinding
 import com.payback.pixiti.model.Image
-import com.payback.pixiti.utils.DEFAULT_QUERY
+import com.payback.pixiti.utils.hideKeyboard
 import com.payback.pixiti.utils.showAlertDialog
 import com.payback.pixiti.utils.showIf
 import com.payback.pixiti.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.Job
 
 @AndroidEntryPoint
 class ImageListFragment : Fragment() {
@@ -28,6 +29,7 @@ class ImageListFragment : Fragment() {
 
     private var _binding: FragmentImageListBinding? = null
     private val binding get() = _binding!!
+    private var currentQuery : String? = null
 
     private val listAdapter by lazy {
         ImageListAdapter().apply {
@@ -57,11 +59,11 @@ class ImageListFragment : Fragment() {
     ) {
         super.onViewCreated(view, savedInstanceState)
         initListAdapter()
-        viewLifecycleOwner.lifecycleScope.launch {
-            imageViewModel.searchImages(DEFAULT_QUERY).collectLatest {
-                listAdapter.submitData(viewLifecycleOwner.lifecycle, it)
-            }
+
+        imageViewModel.images.observe(viewLifecycleOwner) {
+            listAdapter.submitData(viewLifecycleOwner.lifecycle, it)
         }
+        setHasOptionsMenu(true)
     }
 
     private fun initListAdapter() {
@@ -111,7 +113,36 @@ class ImageListFragment : Fragment() {
         )
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_image_list, menu)
+        val searchItem = menu.findItem(R.id.menu_search)
+        val searchView = searchItem.actionView as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                view?.let {
+                    activity?.hideKeyboard(it)
+                    it.clearFocus()
+                }
+                query?.let {
+                    if (it.trim().isNotEmpty()) {
+                        val searchQuery = query.trim()
+                        currentQuery = searchQuery
+                        imageViewModel.searchImages(searchQuery)
+                    }
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return true
+            }
+
+        })
+    }
+
     companion object {
-        const val LIST_GRID_COUNT = 2
+        private const val LIST_GRID_COUNT = 2
     }
 }

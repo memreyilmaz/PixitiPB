@@ -23,5 +23,6 @@
     <string name="desc_permission_missing_permission">All permissions are not granted!</string>
     <string name="desc_image_download_error">An error occurred while saving image!</string>
     <string name="desc_download_success">Image Saved</string>
+    <string name="desc_search_images">Search Images</string>
 
 </resources>
