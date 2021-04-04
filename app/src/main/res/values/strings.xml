@@ -11,11 +11,11 @@
     <string name="label_detail_info_views">Views</string>
     <string name="label_detail_info_resolution">Resolution</string>
 
-    <string name="label_about_app_title">Pixiti 2021</string>
+    <string name="label_about_app_title" translatable="false">Pixiti 2021</string>
     <string name="label_about_images_title">Images on this app from</string>
     <string name="label_about_icons_title">Icons on this app from</string>
-    <string name="label_about_pixabay_url"><a href="https://www.pixabay.com/" title="Pixabay">www.pixabay.com</a></string>
-    <string name="label_about_attribution"><div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> \n<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></string>
+    <string name="label_about_pixabay_url" translatable="false"><a href="https://www.pixabay.com/" title="Pixabay">www.pixabay.com</a></string>
+    <string name="label_about_attribution" translatable="false"><div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> \n<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div></string>
 
     <string name="label_about">About pixiti</string>
 
@@ -48,6 +48,6 @@
     <string name="desc_count_fav_image">Favourite Count</string>
     <string name="desc_count_comment_image">Comment Count</string>
 
-    <string name="desc_logo_pixabay">Pixabay Logo</string>
+    <string name="desc_logo_pixabay" translatable="false">Pixabay Logo</string>
     <string name="desc_image">Image</string>
 </resources>

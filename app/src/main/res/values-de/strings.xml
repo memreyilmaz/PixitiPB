@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Pixiti</string>
+
+    <string name="label_list_retry">Erneut versuchen</string>
+
+    <string name="label_go_to_settings">Gehe zur App Einstellungen</string>
+    <string name="label_go_to_detail">Zum Bilddetail gehen</string>
+    <string name="label_cancel">Abbrechen</string>
+
+    <string name="label_detail_info_downloads">Downloads</string>
+    <string name="label_detail_info_views">Aufrufe</string>
+    <string name="label_detail_info_resolution">Auflösung</string>
+
+    <string name="label_about_images_title">Bilder zu dieser App von</string>
+    <string name="label_about_icons_title">Icons auf dieser App von</string>
+
+    <string name="label_about">Über pixiti</string>
+
+    <string name="label_filter">Filtern</string>
+    <string name="label_filter_type">Typ</string>
+    <string name="label_filter_filter">Filtern</string>
+    <string name="label_filter_orientation">Ausrichtung</string>
+    <string name="label_filter_safe_Search">Sichere Suche</string>
+
+    <string name="desc_list_load_fail">Bilder konnten nicht geladen werden</string>
+    <string name="desc_detail_info_resolution" translatable="false">%1$d x %2d</string>
+    <string name="desc_search_no_images">Keine Bilder gefunden</string>
+    <string name="desc_share_with">Teilen</string>
+    <string name="desc_share_image_message">Hallo, ich möchte dieses Bild von Pixabay mit dir teilen;</string>
+    <string name="desc_permission_denial_title">Um dieses Foto zu speichern, benötigen wir die Erlaubnis, Zugriff auf Medien in deinem Gerät zu erhalten</string>
+    <string name="desc_permission_denial_detail">Einstellungen für Speicher können unter Einstellungen > Apps > Pixiti > Berechtigungen eingestellt werden</string>
+    <string name="desc_permission_error">Beim Abrufen von Erlaubnissen ist ein Fehler aufgetreten!</string>
+
+    <string name="desc_detail_navigation_info">Möchten Sie Bilddetails sehen?</string>
+    <string name="desc_permission_missing_permission">Es werden nicht alle Erlaubnisse erteilt!</string>
+
+    <string name="desc_image_download_error">Beim Speichern des Bildes ist ein Fehler aufgetreten!</string>
+    <string name="desc_download_success">Bild gespeichert</string>
+    <string name="desc_search_images">Suche Bilder</string>
+
+    <string name="desc_download_image">Save Image</string>
+    <string name="desc_info_image">Bild-Info</string>
+    <string name="desc_share_image">Bild speichern</string>
+    <string name="desc_close">Schließen</string>
+
+    <string name="desc_count_like_image">Gefällt mir zählen</string>
+    <string name="desc_count_fav_image">Anzahl der Favoriten</string>
+    <string name="desc_count_comment_image">Anzahl der Kommentare</string>
+
+    <string name="desc_image">Bild</string>
+</resources>
