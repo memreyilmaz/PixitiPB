@@ -37,6 +37,8 @@ class ImageListAdapter : PagingDataAdapter<Image, ImageListAdapter.ListViewHolde
         fun bind(item: Image) {
             binding.apply {
                 imageViewListName.loadImage(imageUrl = item.previewURL, context = itemView.context)
+                textViewImageOwner.text = item.user
+                textViewImageTags.text = item.tags?.replace(",", "")
                 root.setOnClickListener {
                     onItemClickListener?.invoke(item)
                 }

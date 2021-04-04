@@ -1,4 +1,4 @@
-package com.payback.pixiti.ui
+package com.payback.pixiti.ui.list
 
 import android.os.Bundle
 import android.view.LayoutInflater

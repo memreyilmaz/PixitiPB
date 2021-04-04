@@ -9,6 +9,7 @@ fun ImageView.loadImage(imageUrl: String?, context: Context) {
     Glide.with(context)
             .load(imageUrl)
             .placeholder(R.drawable.pixabay_logo)
+            .fitCenter()
             .error(R.drawable.pixabay_logo)
             .into(this)
 }

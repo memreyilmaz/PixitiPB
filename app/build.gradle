@@ -66,9 +66,11 @@ dependencies {
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version"
     androidTestImplementation "androidx.navigation:navigation-testing:$navigation_version"
 
-    //Retrofit + GSON
+    //Retrofit + OkHttp + GSON
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okHttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
 
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
@@ -92,7 +94,7 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
     //RecyclerView
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
 
     //Flexbox Layout
     implementation "com.google.android:flexbox:$flexbox_version"

@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/black"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/image_view_detail"
@@ -25,42 +25,42 @@
 
         <ImageView
             android:id="@+id/image_view_save"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/detail_icon_width"
+            android:layout_height="@dimen/detail_icon_height"
+            android:contentDescription="@string/desc_download_image"
             android:src="@drawable/ic_save"
             app:layout_constraintBottom_toBottomOf="@id/constraint_layout_detail_top"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/desc_download_image" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/image_view_share"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/detail_icon_width"
+            android:layout_height="@dimen/detail_icon_height"
             android:layout_marginStart="@dimen/margin_default"
+            android:contentDescription="@string/desc_share_image"
             android:src="@drawable/ic_share"
             app:layout_constraintStart_toEndOf="@id/image_view_save"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/desc_share_image" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/image_view_info"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/detail_icon_width"
+            android:layout_height="@dimen/detail_icon_height"
             android:layout_marginStart="@dimen/margin_default"
+            android:contentDescription="@string/desc_info_image"
             android:src="@drawable/ic_info"
             app:layout_constraintStart_toEndOf="@id/image_view_share"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/desc_info_image"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/image_view_close"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/detail_icon_width"
+            android:layout_height="@dimen/detail_icon_height"
+            android:contentDescription="@string/desc_close"
             android:src="@drawable/ic_close"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/desc_close"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -96,13 +96,13 @@
 
         <ImageView
             android:id="@+id/image_view_thumb"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/detail_icon_width"
+            android:layout_height="@dimen/detail_icon_height"
+            android:contentDescription="@string/desc_count_like_image"
             android:src="@drawable/ic_thumb"
             app:layout_constraintEnd_toEndOf="@id/text_view_thumb_count"
             app:layout_constraintStart_toStartOf="@id/text_view_thumb_count"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/desc_count_like_image"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_view_thumb_count"
@@ -114,13 +114,13 @@
             tools:text="78129" />
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/detail_icon_width"
+            android:layout_height="@dimen/detail_icon_height"
+            android:contentDescription="@string/desc_count_fav_image"
             android:src="@drawable/ic_favourite"
             app:layout_constraintEnd_toEndOf="@id/text_view_favourite_count"
             app:layout_constraintStart_toStartOf="@id/text_view_favourite_count"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/desc_count_fav_image"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_view_favourite_count"
@@ -132,13 +132,13 @@
             tools:text="4561" />
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="@dimen/detail_icon_width"
+            android:layout_height="@dimen/detail_icon_height"
+            android:contentDescription="@string/desc_count_comment_image"
             android:src="@drawable/ic_comment"
             app:layout_constraintEnd_toEndOf="@id/text_view_comment_count"
             app:layout_constraintStart_toStartOf="@id/text_view_comment_count"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/desc_count_comment_image" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_view_comment_count"

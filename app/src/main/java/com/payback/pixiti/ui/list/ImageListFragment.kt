@@ -12,19 +12,21 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.payback.pixiti.R
 import com.payback.pixiti.databinding.FragmentImageListBinding
 import com.payback.pixiti.model.Image
-import com.payback.pixiti.ui.AboutFragment
 import com.payback.pixiti.ui.MainActivity
 import com.payback.pixiti.utils.hideKeyboard
 import com.payback.pixiti.utils.showAlertDialog
 import com.payback.pixiti.utils.showIf
 import com.payback.pixiti.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ImageListFragment : Fragment() {
@@ -34,6 +36,8 @@ class ImageListFragment : Fragment() {
     private var _binding: FragmentImageListBinding? = null
     private val binding get() = _binding!!
     private var currentQuery : String? = null
+
+    private var searchJob: Job? = null
 
     private val listAdapter by lazy {
         ImageListAdapter().apply {
@@ -72,6 +76,15 @@ class ImageListFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         (activity as MainActivity).supportActionBar?.show()
+    }
+
+    private fun searchImages(){
+        searchJob?.cancel()
+        searchJob = lifecycleScope.launch {
+            imageViewModel.images.observe(viewLifecycleOwner) {
+                listAdapter.submitData(viewLifecycleOwner.lifecycle, it)
+            }
+        }
     }
 
     @SuppressLint("ResourceType")
@@ -145,6 +158,7 @@ class ImageListFragment : Fragment() {
                         val searchQuery = query.trim()
                         currentQuery = searchQuery
                         imageViewModel.searchImages(searchQuery)
+                       // searchImages(searchQuery)
                     }
                 }
                 return true

@@ -15,10 +15,8 @@
 
     <TextView
         android:id="@+id/text_view_pixabay_attribute_title"
-        style="@style/DialogTextView"
-        android:layout_marginBottom="@dimen/margin_default"
-        android:text="@string/label_about_images_title"
-        android:textStyle="bold" />
+        style="@style/DialogTextView.Title"
+        android:text="@string/label_about_images_title" />
 
     <ImageView
         android:id="@+id/image_view_pixabay_logo"
@@ -26,8 +24,8 @@
         android:layout_height="@dimen/about_pixabay_logo_height"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/margin_default"
-        android:src="@drawable/pixabay_logo"
-        android:contentDescription="@string/desc_logo_pixabay" />
+        android:contentDescription="@string/desc_logo_pixabay"
+        android:src="@drawable/pixabay_logo" />
 
     <TextView
         android:id="@+id/text_view_pixabay_website"
@@ -38,18 +36,13 @@
 
     <TextView
         android:id="@+id/text_view_flaticon_attribute_title"
-        style="@style/DialogTextView"
-        android:layout_marginBottom="@dimen/margin_default"
-        android:text="@string/label_about_icons_title"
-        android:textStyle="bold" />
+        style="@style/DialogTextView.Title"
+        android:text="@string/label_about_icons_title" />
 
     <TextView
         android:id="@+id/text_view_flaticon_attribute"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/DialogTextView.Attribute"
         android:autoLink="web"
-        android:gravity="center_horizontal"
-        android:text="@string/label_about_attribution"
-        android:textColor="@color/black" />
+        android:text="@string/label_about_attribution" />
 
 </LinearLayout>
