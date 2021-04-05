@@ -17,7 +17,7 @@
     </style>
 
     <style name="DetailTextView.Dialog">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="DetailTextView.Dialog.Tag">
@@ -42,7 +42,7 @@
     <style name="Seperator">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/default_seperator_height</item>
-        <item name="android:background">@color/black</item>
+        <item name="android:background">@color/white</item>
         <item name="android:layout_marginTop">@dimen/margin_small</item>
         <item name="android:layout_marginBottom">@dimen/margin_small</item>
         <item name="android:visibility">gone</item>
@@ -60,7 +60,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_size_16</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="DialogTextView.Title">
@@ -121,4 +121,11 @@
         <item name="android:textColor">@color/secondary_text_color</item>
         <item name="android:maxLines">2</item>
     </style>
+
+    <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/secondary_text_color</item>
+        <item name="android:background">@color/anthracite</item>
+    </style>
+
 </resources>
