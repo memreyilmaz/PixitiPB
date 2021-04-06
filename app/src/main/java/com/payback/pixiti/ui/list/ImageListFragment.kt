@@ -37,8 +37,6 @@ class ImageListFragment : Fragment() {
     private val binding get() = _binding!!
     private var currentQuery: String? = null
 
-    private var searchJob: Job? = null
-
     private val listAdapter by lazy {
         ImageListAdapter().apply {
             onItemClickListener = { image ->
@@ -52,7 +50,7 @@ class ImageListFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentImageListBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -72,15 +70,6 @@ class ImageListFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         (activity as MainActivity).supportActionBar?.show()
-    }
-
-    private fun searchImages() {
-        searchJob?.cancel()
-        searchJob = lifecycleScope.launch {
-            imageViewModel.images.observe(viewLifecycleOwner) {
-                listAdapter.submitData(viewLifecycleOwner.lifecycle, it)
-            }
-        }
     }
 
     @SuppressLint("ResourceType")

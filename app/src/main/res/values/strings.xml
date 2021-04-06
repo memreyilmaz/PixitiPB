@@ -19,12 +19,6 @@
 
     <string name="label_about">About pixiti</string>
 
-    <string name="label_filter">Filter</string>
-    <string name="label_filter_type">Type</string>
-    <string name="label_filter_filter">Filter</string>
-    <string name="label_filter_orientation">Image Orientation</string>
-    <string name="label_filter_safe_Search">SafeSearch</string>
-
     <string name="desc_list_load_fail">Images couldn\'t load</string>
     <string name="desc_detail_info_resolution" translatable="false">%1$d x %2d</string>
     <string name="desc_search_no_images">No images found</string>

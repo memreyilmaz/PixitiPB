@@ -16,12 +16,6 @@
 
     <string name="label_about">Über pixiti</string>
 
-    <string name="label_filter">Filtern</string>
-    <string name="label_filter_type">Typ</string>
-    <string name="label_filter_filter">Filtern</string>
-    <string name="label_filter_orientation">Ausrichtung</string>
-    <string name="label_filter_safe_Search">Sichere Suche</string>
-
     <string name="desc_list_load_fail">Bilder konnten nicht geladen werden</string>
     <string name="desc_search_no_images">Keine Bilder gefunden</string>
     <string name="desc_share_with">Teilen</string>
