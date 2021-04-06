@@ -80,7 +80,7 @@ class ImageDetailInfoFragment : DialogFragment() {
                 textViewTag.text = tag
                 flexboxLayoutTags.addView(textViewTag)
             }
-            seperatorDetailInfo.showIf(tagsList.isNotEmpty())
+            separatorDetailInfo.showIf(tagsList.isNotEmpty())
             flexboxLayoutTags.showIf(tagsList.isNotEmpty())
         }
     }

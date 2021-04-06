@@ -12,13 +12,12 @@
 
     <TextView
         android:id="@+id/text_view_list_footer_error"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ListFailTextView.Footer"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:text="@string/desc_list_load_fail" />
 
     <Button
         android:id="@+id/button_list_retry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/ListFailButtonStyle"
         android:text="@string/label_list_retry" />
 </LinearLayout>

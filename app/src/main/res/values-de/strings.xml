@@ -23,7 +23,6 @@
     <string name="label_filter_safe_Search">Sichere Suche</string>
 
     <string name="desc_list_load_fail">Bilder konnten nicht geladen werden</string>
-    <string name="desc_detail_info_resolution" translatable="false">%1$d x %2d</string>
     <string name="desc_search_no_images">Keine Bilder gefunden</string>
     <string name="desc_share_with">Teilen</string>
     <string name="desc_share_image_message">Hallo, ich möchte dieses Bild von Pixabay mit dir teilen;</string>
@@ -48,4 +47,6 @@
     <string name="desc_count_comment_image">Anzahl der Kommentare</string>
 
     <string name="desc_image">Bild</string>
+    <string name="desc_error_limit">Das tägliche Anforderungslimit wurde erreicht</string>
+    <string name="desc_error_connection">Bitte überprüfen Sie Ihre Internetverbindung</string>
 </resources>

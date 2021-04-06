@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="anthracite">#29292b</color>
     <color name="secondary_text_color">#8e8e93</color>
+    <color name="light_blue">#007AFF</color>
 </resources>

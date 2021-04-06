@@ -50,4 +50,8 @@
 
     <string name="desc_logo_pixabay" translatable="false">Pixabay Logo</string>
     <string name="desc_image">Image</string>
+
+    <string name="desc_error_limit">Daily Request limit has been reached</string>
+    <string name="desc_error_connection">Please Check Your Internet Connection</string>
+
 </resources>

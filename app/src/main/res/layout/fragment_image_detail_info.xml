@@ -52,8 +52,8 @@
     </RelativeLayout>
 
     <View
-        android:id="@+id/seperator_detail_info"
-        style="@style/Seperator" />
+        android:id="@+id/separator_detail_info"
+        style="@style/Separator" />
 
     <com.google.android.flexbox.FlexboxLayout
         android:id="@+id/flexbox_layout_tags"

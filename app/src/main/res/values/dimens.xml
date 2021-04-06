@@ -24,7 +24,7 @@
 
     <dimen name="detail_count_min_width">36dp</dimen>
 
-    <dimen name="default_seperator_height">0.1dp</dimen>
+    <dimen name="default_separator_height">0.1dp</dimen>
 
     <dimen name="info_tag_corner_radius">24dp</dimen>
     <dimen name="image_item_corner_radius">4dp</dimen>

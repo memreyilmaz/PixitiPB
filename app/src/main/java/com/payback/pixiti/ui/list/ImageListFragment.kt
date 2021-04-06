@@ -20,10 +20,10 @@ import com.payback.pixiti.R
 import com.payback.pixiti.databinding.FragmentImageListBinding
 import com.payback.pixiti.model.Image
 import com.payback.pixiti.ui.MainActivity
+import com.payback.pixiti.utils.ErrorUtil
 import com.payback.pixiti.utils.hideKeyboard
 import com.payback.pixiti.utils.showAlertDialog
 import com.payback.pixiti.utils.showIf
-import com.payback.pixiti.utils.toast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -35,7 +35,7 @@ class ImageListFragment : Fragment() {
 
     private var _binding: FragmentImageListBinding? = null
     private val binding get() = _binding!!
-    private var currentQuery : String? = null
+    private var currentQuery: String? = null
 
     private var searchJob: Job? = null
 
@@ -47,10 +47,6 @@ class ImageListFragment : Fragment() {
                 }
             }
         }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -78,7 +74,7 @@ class ImageListFragment : Fragment() {
         (activity as MainActivity).supportActionBar?.show()
     }
 
-    private fun searchImages(){
+    private fun searchImages() {
         searchJob?.cancel()
         searchJob = lifecycleScope.launch {
             imageViewModel.images.observe(viewLifecycleOwner) {
@@ -110,15 +106,17 @@ class ImageListFragment : Fragment() {
                 recyclerViewList.showIf(loadState.source.refresh is LoadState.NotLoading)
                 progressBar.showIf(loadState.source.refresh is LoadState.Loading)
                 buttonListMainRetry.showIf(loadState.source.refresh is LoadState.Error)
-                textViewEmptySearchList.showIf(loadState.source.refresh is LoadState.NotLoading && loadState.append.endOfPaginationReached)
+                textViewEmptySearchList.showIf(loadState.source.refresh is LoadState.NotLoading
+                        && loadState.append.endOfPaginationReached && listAdapter.itemCount < 1)
             }
 
             val errorState = loadState.source.append as? LoadState.Error
                     ?: loadState.source.prepend as? LoadState.Error
                     ?: loadState.append as? LoadState.Error
                     ?: loadState.prepend as? LoadState.Error
+                    ?: loadState.source.refresh as? LoadState.Error
             errorState?.let {
-                requireContext().applicationContext.toast("${it.error}")
+                ErrorUtil.handleError(it,requireContext())
             }
         }
         binding.buttonListMainRetry.setOnClickListener { listAdapter.retry() }
@@ -136,7 +134,7 @@ class ImageListFragment : Fragment() {
         )
     }
 
-    private fun showAboutFragment(){
+    private fun showAboutFragment() {
         val aboutFragment: DialogFragment = AboutFragment.newInstance()
         aboutFragment.show(childFragmentManager, AboutFragment.TAG)
     }
@@ -158,7 +156,6 @@ class ImageListFragment : Fragment() {
                         val searchQuery = query.trim()
                         currentQuery = searchQuery
                         imageViewModel.searchImages(searchQuery)
-                       // searchImages(searchQuery)
                     }
                 }
                 return true
@@ -179,9 +176,5 @@ class ImageListFragment : Fragment() {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    companion object {
-        private const val LIST_GRID_COUNT = 2
     }
 }
