@@ -12,7 +12,6 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -25,8 +24,6 @@ import com.payback.pixiti.utils.hideKeyboard
 import com.payback.pixiti.utils.showAlertDialog
 import com.payback.pixiti.utils.showIf
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ImageListFragment : Fragment() {
