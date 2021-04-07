@@ -1,7 +1,7 @@
 <h1 align="center">Pixiti</h1>
 
 <p align="center">  
-Pixiti is a small demo application based on modern Android application tech-stacks and MVVM architecture.<br>App fetching data from the network via repository pattern.<br>
+Pixiti is a demo application based on modern Android application tech-stacks and MVVM architecture.<br>App fetching data from the network via repository pattern.<br>
 </p>
 </br>
 
