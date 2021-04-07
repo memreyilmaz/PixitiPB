@@ -6,13 +6,13 @@ Pixiti is a demo application based on modern Android application tech-stacks and
 </br>
 
 <p align="center">
-<img src="/Gallery.png" width="30%"/>
-<img src="/Detail.png" width="30%"/>
-<img src="/Info.png" width="30%"/>
+<img src="/previews/Gallery.png" width="30%"/>
+<img src="/previews/Detail.png" width="30%"/>
+<img src="/previews/Info.png" width="30%"/>
 </p>
 
 
-<img src="/preview.gif" align="right" width="32%"/>
+<img src="/previews/preview.gif" align="right" width="32%"/>
 
 ## Tech stack & Open-source libraries
 - Minimum SDK level 23
@@ -42,7 +42,7 @@ Pixiti is based on MVVM architecture and a repository pattern.
 
 ## Pixabay API
 
-<img src="/pixabaylogo.png" align="right" width="21%"/>
+<img src="/previews/pixabaylogo.png" align="right" width="21%"/>
 
 Pixiti using the [PixabayAPI](https://pixabay.com/api/docs/) for constructing RESTful API.<br>
 Pixabay API provides a RESTful API interface for searching and retrieving free images and videos released under the Pixabay License.
