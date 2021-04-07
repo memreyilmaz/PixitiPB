@@ -17,7 +17,7 @@ Pixiti is a demo application based on modern Android application tech-stacks and
 ## Tech stack & Open-source libraries
 - Minimum SDK level 23
 - [Kotlin](https://kotlinlang.org/) based, [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/) for asynchronous.
-- Hilt (alpha) for dependency injection.
+- [Hilt](https://dagger.dev/hilt/) (alpha) for dependency injection.
 - JetPack
   - LiveData - notify domain layer data to views.
   - Lifecycle - dispose of observing data when lifecycle state changes.
@@ -25,7 +25,7 @@ Pixiti is a demo application based on modern Android application tech-stacks and
   - Paging - The Paging Library helps you load and display small chunks of data at a time.
   - Navigation - Navigation refers to the interactions that allow users to navigate across, into, and back out from the different pieces of content within your app. 
 - Architecture
-  - MVVM Architecture (View - Viewinding - ViewModel - Model)
+  - MVVM Architecture (View - ViewBinding - ViewModel - Model)
   - Repository pattern
 - [Retrofit2 & OkHttp3](https://github.com/square/retrofit) - construct the REST APIs and paging network data.
 - [Glide](https://github.com/bumptech/glide) - Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
@@ -44,7 +44,7 @@ Pixiti is based on MVVM architecture and a repository pattern.
 
 <img src="/pixabaylogo.png" align="right" width="21%"/>
 
-Pixiti using the [PixabayAPI](https://https://pixabay.com/api/docs/) for constructing RESTful API.<br>
+Pixiti using the [PixabayAPI](https://pixabay.com/api/docs/) for constructing RESTful API.<br>
 Pixabay API provides a RESTful API interface for searching and retrieving free images and videos released under the Pixabay License.
 
 ## Icons on this app are from [Flaticon](https://www.flaticon.com/)
