@@ -32,7 +32,6 @@ class ImageListFragment : Fragment() {
 
     private var _binding: FragmentImageListBinding? = null
     private val binding get() = _binding!!
-    private var currentQuery: String? = null
 
     private val listAdapter by lazy {
         ImageListAdapter().apply {
@@ -140,7 +139,7 @@ class ImageListFragment : Fragment() {
                 query?.let {
                     if (it.trim().isNotEmpty()) {
                         val searchQuery = query.trim()
-                        currentQuery = searchQuery
+                        binding.recyclerViewList.scrollToPosition(0)
                         imageViewModel.searchImages(searchQuery)
                     }
                 }
