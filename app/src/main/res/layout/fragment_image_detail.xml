@@ -24,7 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
-            android:transitionName="shared_element_container" />
+            android:transitionName="shared_element_container"
+            app:imageURL='@{image.largeImageURL}' />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint_layout_detail_top"
@@ -98,6 +99,7 @@
                 android:layout_height="@dimen/image_owner_height"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="@dimen/image_owner_border"
+                app:imageURL='@{image.userImageURL}'
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

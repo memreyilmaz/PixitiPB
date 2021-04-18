@@ -64,19 +64,12 @@ class ImageDetailFragment : Fragment() {
 
     private fun initView() {
         binding.apply {
-            //TODO add binding adapters for these two
             imageViewDetail.apply {
-                loadImage(imageUrl = image?.largeImageURL, requireContext())
                 setOnPhotoTapListener { _, _, _ ->
                     constraintLayoutDetailTop.showIfNotVisible()
                     constraintLayoutDetailBottom.showIfNotVisible()
                 }
             }
-
-            imageViewImageOwner.loadImage(
-                    imageUrl = image?.userImageURL,
-                    context = requireContext()
-            )
         }
     }
 
