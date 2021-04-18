@@ -37,7 +37,8 @@ class ImageListFragment : Fragment() {
         ImageListAdapter().apply {
             onItemClickListener = { image ->
                 image?.let {
-                    showDetailNavigationDialog(image)
+                    val action = ImageListFragmentDirections.actionImageListFragmentToImageDetailFragment(image)
+                    findNavController().navigate(action)
                 }
             }
         }
@@ -105,18 +106,6 @@ class ImageListFragment : Fragment() {
             }
         }
         binding.buttonListMainRetry.setOnClickListener { listAdapter.retry() }
-    }
-
-    private fun showDetailNavigationDialog(image: Image) {
-        context?.showAlertDialog(
-                message = getString(R.string.desc_detail_navigation_info),
-                negativeButtonText = getString(R.string.label_cancel),
-                positiveButtonText = getString(R.string.label_go_to_detail),
-                positiveButtonListener = {
-                    val action = ImageListFragmentDirections.actionImageListFragmentToImageDetailFragment(image)
-                    findNavController().navigate(action)
-                }
-        )
     }
 
     private fun showAboutFragment() {
