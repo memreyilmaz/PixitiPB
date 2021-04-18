@@ -57,11 +57,14 @@ class ImageDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         image = args.image
+        binding.fragment = this
+        binding.image = image
         initView()
     }
 
     private fun initView() {
         binding.apply {
+            //TODO add binding adapters for these two
             imageViewDetail.apply {
                 loadImage(imageUrl = image?.largeImageURL, requireContext())
                 setOnPhotoTapListener { _, _, _ ->
@@ -74,34 +77,14 @@ class ImageDetailFragment : Fragment() {
                     imageUrl = image?.userImageURL,
                     context = requireContext()
             )
-            textViewImageOwner.text = image?.user
-            textViewThumbCount.text = image?.likes.toIntOrZero().toString()
-            textViewFavouriteCount.text = image?.favorites.toIntOrZero().toString()
-            textViewCommentCount.text = image?.comments.toIntOrZero().toString()
-
-            imageViewSave.setOnClickListener {
-                if (PermissionUtil.isStoragePermissionGranted(requireContext())) {
-                    downloadImage()
-                } else {
-                    requestPermissionForImageDownload()
-                }
-            }
-
-            imageViewShare.setOnClickListener {
-                createShareIntent()
-            }
-
-            imageViewInfo.setOnClickListener {
-                showInfoDialog()
-            }
-
-            imageViewClose.setOnClickListener {
-                findNavController().navigateUp()
-            }
         }
     }
 
-    private fun showInfoDialog() {
+    fun goBack() {
+        findNavController().navigateUp()
+    }
+
+    fun showInfoDialog() {
         image.let {
             val imageDetailInfoFragment: DialogFragment =
                     ImageDetailInfoFragment.newInstance(it!!)
@@ -109,6 +92,14 @@ class ImageDetailFragment : Fragment() {
                     childFragmentManager.beginTransaction(),
                     ImageDetailInfoFragment.TAG
             )
+        }
+    }
+
+    fun getImage() {
+        if (PermissionUtil.isStoragePermissionGranted(requireContext())) {
+            downloadImage()
+        } else {
+            requestPermissionForImageDownload()
         }
     }
 
@@ -222,7 +213,7 @@ class ImageDetailFragment : Fragment() {
         startActivityForResult(intent, GO_TO_SETTINGS_REQUEST_CODE)
     }
 
-    private fun createShareIntent() {
+    fun createShareIntent() {
         val shareString = StringBuilder()
         shareString.append(getString(R.string.desc_share_image_message))
                 .append("\n")

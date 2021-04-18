@@ -1,153 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.github.chrisbanes.photoview.PhotoView
-        android:id="@+id/image_view_detail"
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.example.pixiti.ui.detail.ImageDetailFragment" />
+
+        <variable
+            name="image"
+            type="com.example.pixiti.model.Image" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        android:transitionName="shared_element_container" />
+        android:background="@color/black">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint_layout_detail_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:paddingHorizontal="@dimen/padding_medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/image_view_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:transitionName="shared_element_container" />
 
-        <ImageView
-            android:id="@+id/image_view_save"
-            android:layout_width="@dimen/detail_icon_width"
-            android:layout_height="@dimen/detail_icon_height"
-            android:contentDescription="@string/desc_download_image"
-            android:src="@drawable/ic_save"
-            app:layout_constraintBottom_toBottomOf="@id/constraint_layout_detail_top"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/image_view_share"
-            android:layout_width="@dimen/detail_icon_width"
-            android:layout_height="@dimen/detail_icon_height"
-            android:layout_marginStart="@dimen/margin_default"
-            android:contentDescription="@string/desc_share_image"
-            android:src="@drawable/ic_share"
-            app:layout_constraintStart_toEndOf="@id/image_view_save"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/image_view_info"
-            android:layout_width="@dimen/detail_icon_width"
-            android:layout_height="@dimen/detail_icon_height"
-            android:layout_marginStart="@dimen/margin_default"
-            android:contentDescription="@string/desc_info_image"
-            android:src="@drawable/ic_info"
-            app:layout_constraintStart_toEndOf="@id/image_view_share"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/image_view_close"
-            android:layout_width="@dimen/detail_icon_width"
-            android:layout_height="@dimen/detail_icon_height"
-            android:contentDescription="@string/desc_close"
-            android:src="@drawable/ic_close"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout_detail_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:paddingHorizontal="@dimen/padding_medium"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraint_layout_detail_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/padding_medium"
-        android:paddingVertical="@dimen/padding_medium_20"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/image_view_image_owner"
-            android:layout_width="@dimen/image_owner_width"
-            android:layout_height="@dimen/image_owner_height"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="@dimen/image_owner_border"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/text_view_image_owner"
-            style="@style/DetailTextView.Main"
-            android:layout_marginStart="@dimen/margin_default"
-            app:layout_constraintBottom_toBottomOf="@+id/image_view_image_owner"
-            app:layout_constraintStart_toEndOf="@id/image_view_image_owner"
-            app:layout_constraintTop_toTopOf="@+id/image_view_image_owner"
-            tools:text="sampleUser" />
+            <ImageView
+                android:id="@+id/image_view_save"
+                android:layout_width="@dimen/detail_icon_width"
+                android:layout_height="@dimen/detail_icon_height"
+                android:contentDescription="@string/desc_download_image"
+                android:onClick='@{v -> fragment.getImage()}'
+                android:src="@drawable/ic_save"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_layout_detail_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/image_view_thumb"
-            android:layout_width="@dimen/detail_icon_width"
-            android:layout_height="@dimen/detail_icon_height"
-            android:contentDescription="@string/desc_count_like_image"
-            android:src="@drawable/ic_thumb"
-            app:layout_constraintEnd_toEndOf="@id/text_view_thumb_count"
-            app:layout_constraintStart_toStartOf="@id/text_view_thumb_count"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/image_view_share"
+                android:layout_width="@dimen/detail_icon_width"
+                android:layout_height="@dimen/detail_icon_height"
+                android:layout_marginStart="@dimen/margin_default"
+                android:contentDescription="@string/desc_share_image"
+                android:onClick='@{v -> fragment.createShareIntent()}'
+                android:src="@drawable/ic_share"
+                app:layout_constraintStart_toEndOf="@id/image_view_save"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/text_view_thumb_count"
-            style="@style/DetailTextView.Main.Count"
-            android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginEnd="@dimen/margin_medium"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/text_view_favourite_count"
-            tools:text="78129" />
+            <ImageView
+                android:id="@+id/image_view_info"
+                android:layout_width="@dimen/detail_icon_width"
+                android:layout_height="@dimen/detail_icon_height"
+                android:layout_marginStart="@dimen/margin_default"
+                android:contentDescription="@string/desc_info_image"
+                android:onClick='@{v -> fragment.showInfoDialog()}'
+                android:src="@drawable/ic_info"
+                app:layout_constraintStart_toEndOf="@id/image_view_share"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:layout_width="@dimen/detail_icon_width"
-            android:layout_height="@dimen/detail_icon_height"
-            android:contentDescription="@string/desc_count_fav_image"
-            android:src="@drawable/ic_favourite"
-            app:layout_constraintEnd_toEndOf="@id/text_view_favourite_count"
-            app:layout_constraintStart_toStartOf="@id/text_view_favourite_count"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/image_view_close"
+                android:layout_width="@dimen/detail_icon_width"
+                android:layout_height="@dimen/detail_icon_height"
+                android:contentDescription="@string/desc_close"
+                android:onClick='@{v -> fragment.goBack()}'
+                android:src="@drawable/ic_close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/text_view_favourite_count"
-            style="@style/DetailTextView.Main.Count"
-            android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginEnd="@dimen/margin_medium"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/text_view_comment_count"
-            tools:text="4561" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:layout_width="@dimen/detail_icon_width"
-            android:layout_height="@dimen/detail_icon_height"
-            android:contentDescription="@string/desc_count_comment_image"
-            android:src="@drawable/ic_comment"
-            app:layout_constraintEnd_toEndOf="@id/text_view_comment_count"
-            app:layout_constraintStart_toStartOf="@id/text_view_comment_count"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/text_view_comment_count"
-            style="@style/DetailTextView.Main.Count"
-            android:layout_marginStart="@dimen/margin_default"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout_detail_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_medium"
+            android:paddingVertical="@dimen/padding_medium_20"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="122" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_view_image_owner"
+                android:layout_width="@dimen/image_owner_width"
+                android:layout_height="@dimen/image_owner_height"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="@dimen/image_owner_border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_view_image_owner"
+                style="@style/DetailTextView.Main"
+                android:layout_marginStart="@dimen/margin_default"
+                android:text='@{image.user ?? ""}'
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_image_owner"
+                app:layout_constraintStart_toEndOf="@id/image_view_image_owner"
+                app:layout_constraintTop_toTopOf="@+id/image_view_image_owner"
+                tools:text="sampleUser" />
+
+            <ImageView
+                android:id="@+id/image_view_thumb"
+                android:layout_width="@dimen/detail_icon_width"
+                android:layout_height="@dimen/detail_icon_height"
+                android:contentDescription="@string/desc_count_like_image"
+                android:src="@drawable/ic_thumb"
+                app:layout_constraintEnd_toEndOf="@id/text_view_thumb_count"
+                app:layout_constraintStart_toStartOf="@id/text_view_thumb_count"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_view_thumb_count"
+                style="@style/DetailTextView.Main.Count"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text='@{String.valueOf(image.likes) ?? "0"}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text_view_favourite_count"
+                tools:text="78129" />
+
+            <ImageView
+                android:layout_width="@dimen/detail_icon_width"
+                android:layout_height="@dimen/detail_icon_height"
+                android:contentDescription="@string/desc_count_fav_image"
+                android:src="@drawable/ic_favourite"
+                app:layout_constraintEnd_toEndOf="@id/text_view_favourite_count"
+                app:layout_constraintStart_toStartOf="@id/text_view_favourite_count"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_view_favourite_count"
+                style="@style/DetailTextView.Main.Count"
+                android:layout_marginStart="@dimen/margin_default"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:text='@{String.valueOf(image.favorites) ?? "0"}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/text_view_comment_count"
+                tools:text="4561" />
+
+            <ImageView
+                android:layout_width="@dimen/detail_icon_width"
+                android:layout_height="@dimen/detail_icon_height"
+                android:contentDescription="@string/desc_count_comment_image"
+                android:src="@drawable/ic_comment"
+                app:layout_constraintEnd_toEndOf="@id/text_view_comment_count"
+                app:layout_constraintStart_toStartOf="@id/text_view_comment_count"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_view_comment_count"
+                style="@style/DetailTextView.Main.Count"
+                android:layout_marginStart="@dimen/margin_default"
+                android:text='@{String.valueOf(image.comments) ?? "0"}'
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="122" />
 
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
