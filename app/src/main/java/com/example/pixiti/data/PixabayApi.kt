@@ -17,6 +17,6 @@ interface PixabayApi {
     ): ImageResponse
 
     companion object {
-        const val KEY = BuildConfig.PIXABAY_API_KEY
+        const val KEY = BuildConfig.pixabay_api_key
     }
 }
