@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'androidx.navigation.safeargs.kotlin'
     id 'dagger.hilt.android.plugin'
+    id("com.google.secrets_gradle_plugin") version "0.6"
 }
 
 android {
@@ -12,16 +13,13 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.payback.pixiti"
+        applicationId "com.example.pixiti"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        buildConfigField("String", "PIXABAY_API_KEY", pixabay_api_key)
-
     }
 
     buildTypes {
@@ -32,6 +30,7 @@ android {
     }
 
     buildFeatures {
+        dataBinding true
         viewBinding true
     }
 

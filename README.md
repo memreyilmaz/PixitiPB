@@ -25,7 +25,7 @@ Pixiti is a demo application based on modern Android application tech-stacks and
   - Paging - The Paging Library helps you load and display small chunks of data at a time.
   - Navigation - Navigation refers to the interactions that allow users to navigate across, into, and back out from the different pieces of content within your app. 
 - Architecture
-  - MVVM Architecture (View - ViewBinding - ViewModel - Model)
+  - MVVM Architecture (View - ViewBinding & DataBinding - ViewModel - Model)
   - Repository pattern
 - [Retrofit2 & OkHttp3](https://github.com/square/retrofit) - construct the REST APIs and paging network data.
 - [Glide](https://github.com/bumptech/glide) - Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
@@ -35,7 +35,9 @@ Pixiti is a demo application based on modern Android application tech-stacks and
 - Custom Views
   - [PhotoView](https://github.com/chrisbanes/PhotoView) - An easily usable implementation of a zooming Android ImageView.
   - [CircleImageView](https://github.com/hdodenhof/CircleImageView) - A fast circular ImageView perfect for profile images.
-
+- Plugins
+  - [Secrets Gradle Plugin for Android](https://github.com/google/secrets-gradle-plugin) - A Gradle plugin for providing your secrets securely to your Android project.
+  ### Please add your Pixabay api key to pixabay_api_key field in local.properties to run
 
 ## Architecture
 Pixiti is based on MVVM architecture and a repository pattern.
