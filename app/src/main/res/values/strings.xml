@@ -4,7 +4,6 @@
     <string name="label_list_retry">Retry</string>
 
     <string name="label_go_to_settings">Go To App Settings</string>
-    <string name="label_go_to_detail">Go To Image Detail</string>
     <string name="label_cancel">Cancel</string>
 
     <string name="label_detail_info_downloads">Downloads</string>
@@ -27,7 +26,7 @@
     <string name="desc_permission_denial_title">To save this photo, we need permission to access media on your device</string>
     <string name="desc_permission_denial_detail">Storage permissions can be enabled under Settings > Apps > Pixiti > Permissions.</string>
     <string name="desc_permission_error">An error occurred while getting permissions!</string>
-    <string name="desc_detail_navigation_info">Would you like to see image detail?</string>
+
     <string name="desc_permission_missing_permission">All permissions are not granted!</string>
     <string name="desc_image_download_error">An error occurred while saving image!</string>
     <string name="desc_download_success">Image Saved</string>

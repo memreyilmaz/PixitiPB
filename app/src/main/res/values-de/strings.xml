@@ -4,7 +4,6 @@
     <string name="label_list_retry">Erneut versuchen</string>
 
     <string name="label_go_to_settings">Gehe zur App Einstellungen</string>
-    <string name="label_go_to_detail">Zum Bilddetail gehen</string>
     <string name="label_cancel">Abbrechen</string>
 
     <string name="label_detail_info_downloads">Downloads</string>
@@ -24,7 +23,6 @@
     <string name="desc_permission_denial_detail">Einstellungen für Speicher können unter Einstellungen > Apps > Pixiti > Berechtigungen eingestellt werden</string>
     <string name="desc_permission_error">Beim Abrufen von Erlaubnissen ist ein Fehler aufgetreten!</string>
 
-    <string name="desc_detail_navigation_info">Möchten Sie Bilddetails sehen?</string>
     <string name="desc_permission_missing_permission">Es werden nicht alle Erlaubnisse erteilt!</string>
 
     <string name="desc_image_download_error">Beim Speichern des Bildes ist ein Fehler aufgetreten!</string>
